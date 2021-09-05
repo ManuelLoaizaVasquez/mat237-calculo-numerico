@@ -54,6 +54,7 @@
 - Initial Value Problems for ODEs
   - Euler's Method
   - Runge-Kutta Method
+  - Taylor Series Method
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 5.
 
 - Differential Technique
