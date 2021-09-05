@@ -6,8 +6,8 @@
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 1.
 
 - Binary Search
-  - [Codeforces - EDU BS Gym](https://codeforces.com/edu/course/2/lesson/6/standings)
-  - [Codeforces - Parallel BS Blog](https://codeforces.com/blog/entry/45578)
+  - [Codeforces](https://codeforces.com/edu/course/2/lesson/6/standings)
+  - [Codeforces - Parallel Binary Search](https://codeforces.com/blog/entry/45578)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
 
 - Ternary Search
@@ -26,3 +26,7 @@
   - Rank of a Matrix
     - [CP Algorithms](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
+
+- Lagrange Interpolation
+  - [Codeforces](https://codeforces.com/blog/entry/82953)
+  - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
