@@ -16,3 +16,13 @@
 - Newton's Method for Finding Roots
   - [CP Algorithms](https://cp-algorithms.com/num_methods/roots_newton.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
+
+- Matrices
+  - Gauss and Systems of Linear Equations
+    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/linear-system-gauss.html)
+  - Gauss and Determinant
+    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/determinant-gauss.html)
+    - [CP Algorithms - Kraut method in O(n^3)](https://cp-algorithms.com/linear_algebra/determinant-kraut.html)
+  - Rank of a Matrix
+    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
