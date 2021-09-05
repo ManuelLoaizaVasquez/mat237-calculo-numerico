@@ -1,2 +1,6 @@
-# mat237-calculo-numerico
-Matemáticas PUCP 2021-2
+# MAT237 - Cálculo Numérico
+
+## ACM ICPC
+
+- Errores
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 1.
