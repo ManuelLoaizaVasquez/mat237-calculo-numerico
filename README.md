@@ -46,3 +46,7 @@
   - [Codeforces](https://codeforces.com/blog/entry/8242)
   - [CP Algorithms](https://cp-algorithms.com/num_methods/simpson-integration.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 4.
+
+- Least Squares Approximation
+  - [MIT 18.085 - Computational Science And Engineering I](https://math.mit.edu/classes/18.085/summer2014/)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 8.
