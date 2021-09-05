@@ -2,5 +2,5 @@
 
 ## ACM ICPC
 
-- Errores
+- Error Analysis
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 1.
