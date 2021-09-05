@@ -42,3 +42,7 @@
   - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
 
+- Numerical Integration
+  - [Codeforces](https://codeforces.com/blog/entry/8242)
+  - [CP Algorithms](https://cp-algorithms.com/num_methods/simpson-integration.html)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 4.
