@@ -37,3 +37,8 @@
 
 - Gauss-Seidel Iterative Technique
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
+
+- Newton's Method for Calculating Functions in Polynomials
+  - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
+
