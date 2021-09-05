@@ -30,3 +30,4 @@
 - Lagrange Interpolation
   - [Codeforces](https://codeforces.com/blog/entry/82953)
   - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 3.
