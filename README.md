@@ -6,30 +6,29 @@
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 1.
 
 - Binary Search
-  - [Codeforces](https://codeforces.com/edu/course/2/lesson/6/standings)
+  - [Codeforces - Binary Search](https://codeforces.com/edu/course/2/lesson/6/standings)
   - [Codeforces - Parallel Binary Search](https://codeforces.com/blog/entry/45578)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
 
 - Ternary Search
-  - [CP Algorithms](https://cp-algorithms.com/num_methods/ternary_search.html)
+  - [CP Algorithms - Ternary Search](https://cp-algorithms.com/num_methods/ternary_search.html)
+  - [HackerEarth - Ternary Search](https://www.hackerearth.com/practice/algorithms/searching/ternary-search/practice-problems/)
 
 - Newton's Method
-  - Finding Roots
-    - [CP Algorithms](https://cp-algorithms.com/num_methods/roots_newton.html)
-    - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
-  - Calculating Functions in Polynomials
-    - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
-    - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
+  - [CP Algorithms - Finding Roots](https://cp-algorithms.com/num_methods/roots_newton.html)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
+  - [CP Algorithms - Calculating Functions in Polynomials](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
 
 - Interpolation
   - [Codeforces - Lagrange Polynomial](https://codeforces.com/blog/entry/82953)
-  - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
+  - [CP Algorithms - Evaluation and Interpolation](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
   - [MIT 18.330 - Cubic Spline Interpolation](https://ocw.mit.edu/courses/mathematics/18-330-introduction-to-numerical-analysis-spring-2012/lecture-notes/MIT18_330S12_Chapter3.pdf)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 3.
 
 - Numerical Integration
-  - [Codeforces](https://codeforces.com/blog/entry/8242)
-  - [CP Algorithms](https://cp-algorithms.com/num_methods/simpson-integration.html)
+  - [Codeforces - Tasks Involving Numerical Integration](https://codeforces.com/blog/entry/8242)
+  - [CP Algorithms - Integration by Simpson's formula](https://cp-algorithms.com/num_methods/simpson-integration.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 4.
 
 - Initial Value Problems for ODEs
@@ -39,25 +38,22 @@
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 5.
 
 - Matrices
-  - Gauss and Systems of Linear Equations
-    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/linear-system-gauss.html)
-  - Gauss and Determinant
-    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/determinant-gauss.html)
-    - [CP Algorithms - Kraut method in O(n^3)](https://cp-algorithms.com/linear_algebra/determinant-kraut.html)
-  - Rank of a Matrix
-    - [CP Algorithms](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
+  - [CP Algorithms - Gauss and Systems of Linear Equations](https://cp-algorithms.com/linear_algebra/linear-system-gauss.html)
+  - [CP Algorithms - Gauss and Determinant](https://cp-algorithms.com/linear_algebra/determinant-gauss.html)
+  - [CP Algorithms - Kraut method in O(n^3)](https://cp-algorithms.com/linear_algebra/determinant-kraut.html)
+  - [CP Algorithms - Rank of a Matrix](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
   - Eigenvalues and Eigenvectors
     - [Codeforces - Little Pony and Elements of Harmony](https://codeforces.com/problemset/problem/453/D)
     - [CodeChef - Future of Draughts](https://www.codechef.com/problems/CLOWAY)
-    - [MIT 18.085 - Computational Science And Engineering I](https://math.mit.edu/classes/18.085/summer2014/)
-  - Iterative Techniques in Matrix Algebra
+    - [MIT 18.085 - Eigenvalues and Eigenvectors](https://math.mit.edu/classes/18.085/summer2014/)
+  - Iterative Techniques
     - Jacobi's Method
     - Gauss-Seidel Method
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
 
 - Least Squares Approximation
-  - [MIT 18.085 - Computational Science And Engineering I](https://math.mit.edu/classes/18.085/summer2014/)
+  - [MIT 18.085 - Least Squares](https://math.mit.edu/classes/18.085/summer2014/)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 8.
 
 - Differential Technique
