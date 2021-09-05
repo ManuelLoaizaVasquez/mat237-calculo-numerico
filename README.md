@@ -50,10 +50,18 @@
   - Iterative Techniques
     - Jacobi's Method
     - Gauss-Seidel Method
+  - Cormen, Leiserson, Rivest and Stein. Introduction to Algorithms. Third Edition. Chapter 28.
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
 
-- Least Squares Approximation
-  - [MIT 18.085 - Least Squares](https://math.mit.edu/classes/18.085/summer2014/)
+- Approximation Theory
+  - Least Squares Approximation
+    - [MIT 18.085 - Least Squares](https://math.mit.edu/classes/18.085/summer2014/)
+  - Fast Fourier Transform
+    - [CP Algorithms - Discrete Fourier Transform](https://cp-algorithms.com/algebra/fft.html#toc-tgt-0)
+    - [CP Algorithms - Number Theoretic Transform](https://cp-algorithms.com/algebra/fft.html#toc-tgt-6)
+    - Codeforces - Tutorial on FFT and NTT. Part [1](https://codeforces.com/blog/entry/43499) and [2](https://codeforces.com/blog/entry/48798)
+  - Antti Laaksonen. Guide to Competitive Programming. Second Edition. Springer. Chapter 11.
+  - Cormen, Leiserson, Rivest and Stein. Introduction to Algorithms. Third Edition. Chapter 30.
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 8.
 
 - Differential Technique
