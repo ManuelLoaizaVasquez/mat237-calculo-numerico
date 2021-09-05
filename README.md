@@ -27,9 +27,10 @@
     - [CP Algorithms](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
 
-- Lagrange Interpolation
-  - [Codeforces](https://codeforces.com/blog/entry/82953)
+- Interpolation
+  - [Codeforces - Lagrange Polynomial](https://codeforces.com/blog/entry/82953)
   - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
+  - [MIT 18.330 - Cubic Spline Interpolation](https://ocw.mit.edu/courses/mathematics/18-330-introduction-to-numerical-analysis-spring-2012/lecture-notes/MIT18_330S12_Chapter3.pdf)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 3.
 
 - Iterative Techniques in Matrix Algebra
