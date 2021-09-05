@@ -12,3 +12,7 @@
 
 - Ternary Search
   - [CP Algorithms](https://cp-algorithms.com/num_methods/ternary_search.html)
+
+- Newton's Method for Finding Roots
+  - [CP Algorithms](https://cp-algorithms.com/num_methods/roots_newton.html)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
