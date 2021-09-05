@@ -32,10 +32,9 @@
   - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 3.
 
-- Jacobi Iterative Technique
-  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
-
-- Gauss-Seidel Iterative Technique
+- Iterative Techniques in Matrix Algebra
+  - Jacobi's Method
+  - Gauss-Seidel Method
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
 
 - Newton's Method for Calculating Functions in Polynomials
