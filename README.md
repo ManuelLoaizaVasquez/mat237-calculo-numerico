@@ -13,9 +13,13 @@
 - Ternary Search
   - [CP Algorithms](https://cp-algorithms.com/num_methods/ternary_search.html)
 
-- Newton's Method for Finding Roots
-  - [CP Algorithms](https://cp-algorithms.com/num_methods/roots_newton.html)
-  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
+- Newton's Method
+  - Finding Roots
+    - [CP Algorithms](https://cp-algorithms.com/num_methods/roots_newton.html)
+    - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 2.
+  - Calculating Functions in Polynomials
+    - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
+    - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
 
 - Matrices
   - Gauss and Systems of Linear Equations
@@ -37,10 +41,6 @@
   - Jacobi's Method
   - Gauss-Seidel Method
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
-
-- Newton's Method for Calculating Functions in Polynomials
-  - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-6)
-  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 10.
 
 - Numerical Integration
   - [Codeforces](https://codeforces.com/blog/entry/8242)
