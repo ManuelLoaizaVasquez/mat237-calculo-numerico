@@ -49,3 +49,11 @@
 - Least Squares Approximation
   - [MIT 18.085 - Computational Science And Engineering I](https://math.mit.edu/classes/18.085/summer2014/)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 8.
+
+- Initial Value Problems for ODEs
+  - Euler's Method
+  - Runge-Kutta Method
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 5.
+
+- Differential Technique
+  - [Codeforces - For those who are interested in well-known problems in China](https://codeforces.com/blog/entry/76447)
