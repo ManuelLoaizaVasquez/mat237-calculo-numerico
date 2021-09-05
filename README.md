@@ -1,4 +1,4 @@
-# MAT237 - Cálculo Numérico
+# MAT237 - Numerical Calculus
 
 ## ACM ICPC
 
@@ -32,5 +32,8 @@
   - [CP Algorithms](https://cp-algorithms.com/algebra/polynomial.html#toc-tgt-12)
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 3.
 
-- Jacobi's Method
+- Jacobi Iterative Technique
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
+
+- Gauss-Seidel Iterative Technique
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
