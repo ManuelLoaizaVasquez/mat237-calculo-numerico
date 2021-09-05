@@ -46,15 +46,14 @@
     - [CP Algorithms - Kraut method in O(n^3)](https://cp-algorithms.com/linear_algebra/determinant-kraut.html)
   - Rank of a Matrix
     - [CP Algorithms](https://cp-algorithms.com/linear_algebra/rank-matrix.html)
+  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
   - Eigenvalues and Eigenvectors
     - [Codeforces - Little Pony and Elements of Harmony](https://codeforces.com/problemset/problem/453/D)
     - [CodeChef - Future of Draughts](https://www.codechef.com/problems/CLOWAY)
     - [MIT 18.085 - Computational Science And Engineering I](https://math.mit.edu/classes/18.085/summer2014/)
-  - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 6.
-
-- Iterative Techniques in Matrix Algebra
-  - Jacobi's Method
-  - Gauss-Seidel Method
+  - Iterative Techniques in Matrix Algebra
+    - Jacobi's Method
+    - Gauss-Seidel Method
   - Burden and Faires. Numerical Analysis. Cengage Learning. Chapter 7.
 
 - Least Squares Approximation
