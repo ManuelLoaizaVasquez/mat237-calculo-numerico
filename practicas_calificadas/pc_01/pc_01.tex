@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts,latexsym,amsthm,amssymb,amsmath,amscd,euscript}
+\usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{framed}
 % Descomentar fullpage cuando se quiera utilizar menos margen horizontal
@@ -141,7 +142,7 @@
 \begin{statement}{a}
   Use MATLAB para hacer una tabla de las ra\'ices de
   \[
-    x^2 + (2 + \varepsilon)x + 1,  
+    x^2 - (2 + \varepsilon)x + 1,  
   \]
   para $\varepsilon = 10^{-n}$ con $n = 4, 6, \dots, 12$.
 \end{statement}
@@ -165,6 +166,18 @@
   sea igual a $1000$. Para cada soluci\'on, calcule el determinante
   correspondiente y reporte cu\'antos decimales correctos (despu\'es del punto
   decimal) tiene el determinante cuando su soluci\'on $x$ es usada.
+\end{statement}
+
+\begin{solution}
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{graphics/plot.png}
+    \caption{Esbozo de la funci\'on objetivo}
+  \end{figure}
+\end{solution}
+
+\begin{statement}{5}
+
 \end{statement}
 
 \end{document}
