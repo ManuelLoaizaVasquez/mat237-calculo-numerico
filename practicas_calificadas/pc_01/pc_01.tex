@@ -29,6 +29,7 @@
 \newtheorem*{remark}{Observaci\'on}
 \newtheorem*{notation}{Notaci\'on}
 \newtheorem*{note}{Nota}
+\newtheorem*{solution}{Soluci\'on}
 
 % Define tus comandos para hacer la vida más fácil.
 \newcommand{\BR}{\mathbb R}
@@ -67,9 +68,50 @@
   $f(x) = cos(2 \pi x)$
 \end{statement}
 
+\begin{solution}
+  Primero probemos el siguiente lema:
+
+  \begin{lemma}
+    Sean $f:\BR \to \BR$ y $g:\BR \to \BR$ funciones continuas diferenciables y
+    $h: \BR \to \BR$ con $h(x) = f(g(x))$, luego
+    \[
+      \kappa_h(x) = \kappa_f(g(x)) \cdot \kappa_g(x).
+    \]
+  \end{lemma}
+
+  \begin{proof}
+    Aplicamos la f\'ormula de condicionamiento a $h$ y la regla de la cadena
+    \begin{align*}
+      \kappa_h(x) &= \left|x \cdot \frac{h'(x)}{h(x)}\right|\\
+      &= \left|x \cdot \frac{f'(g(x)) g'(x)}{f(g(x))}\right|\\
+      &= \left|g(x) \cdot \frac{f'(g(x))}{f(g(x))}\right| \cdot \left|x \cdot \frac{g'(x)}{g(x)}\right|\\
+      &= \kappa_f(g(x)) \cdot \kappa_g(x).
+    \end{align*}
+    obteniendo la expresi\'on buscada.
+  \end{proof}
+
+  Sean $g: \BR \to \BR$ y $h: \BR \to \BR$ con $g(x) = cos(x)$ y $h(x) = 2 \pi x$.
+  Tenemos que $f = g \circ h$, por lo que
+  \begin{align*}
+    \kappa_f(x) &= \kappa_g(h(x)) \cdot \kappa_h(x)\\
+    &= \left|2 \pi x \cdot \frac{-\sin(2 \pi x)}{\cos(2 \pi x)}\right| \cdot \left|x \cdot \frac{2 \pi}{2 \pi x}\right|\\
+    &= 2\pi|x \tan(2 \pi x)|.
+  \end{align*}
+\end{solution}
+
 \begin{statement}{b}
   $f(x) = e^{-x^2}$
 \end{statement}
+
+\begin{solution}
+  Sean $g: \BR \to \BR$ y $h: \BR \to \BR$ con $g(x) = e^x$ y $h(x) = -x^2$.
+  Tenemos que $f = g \circ h$, por lo que
+  \begin{align*}
+    \kappa_f(x) &= \kappa_g(h(x)) \cdot \kappa_h(x) \\
+    &= \left|-x^2 \cdot \frac{e^{-x^2}}{e^{-x^2}}\right|\cdot 2 \\
+    &= 2x^2.
+  \end{align*}
+\end{solution}
 
 \begin{statement}{2}
   Suponga que $f$ es una funci\'on con n\'umero de condicionamiento
