@@ -72,6 +72,7 @@
   Primero probemos el siguiente lema:
 
   \begin{lemma}
+    \label{lemma01}
     Sean $f:\BR \to \BR$ y $g:\BR \to \BR$ funciones continuas diferenciables y
     $h: \BR \to \BR$ con $h(x) = f(g(x))$, luego
     \[
@@ -122,6 +123,16 @@
   \]
   provisto que el denominador es diferente de cero.
 \end{statement}
+
+\begin{proof}
+  Analicemos el producto $\kappa_f(f^{-1}(x)) \cdot \kappa_{f^{-1}}(x)$.
+  De acuerdo a Lema \ref{lemma01}
+  \[
+    \kappa_f(f^{-1}(x)) \cdot \kappa_{f^{-1}}(x) = \kappa_{f \circ f^{-1}(x)}(x) = \kappa_x(x) = 1.
+  \]
+  Ya que nos garantizan que la expresi\'on de la izquierda es distinta de cero,
+  pasamos a dividir esta y concluimos con la prueba obteniendo lo requerido.
+\end{proof}
 
 \begin{statement}{3}
   El polinomio $x^2 - 2x + 1$ tiene una ra\'iz doble en $r = 1$.
