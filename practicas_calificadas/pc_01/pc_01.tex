@@ -1,9 +1,15 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts,latexsym,amsthm,amssymb,amsmath,amscd,euscript}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{framed}
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
 % Descomentar fullpage cuando se quiera utilizar menos margen horizontal
 %\usepackage{fullpage}
 \usepackage{hyperref}
@@ -40,6 +46,26 @@
 \newcommand{\BZ}{\mathbb Z}
 \newcommand{\BN}{\mathbb N}
 
+% MATLAB
+\lstset{language=Matlab,%
+  %basicstyle=\color{red},
+  breaklines=true,%
+  morekeywords={matlab2tikz},
+  keywordstyle=\color{blue},%
+  morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+  identifierstyle=\color{black},%
+  stringstyle=\color{mylilas},
+  commentstyle=\color{mygreen},%
+  showstringspaces=false,%without this there will be a symbol in the places where there is a space
+  numbers=left,%
+  numberstyle={\tiny \color{black}},% size of the numbers
+  numbersep=9pt, % this defines how far the numbers are from the text
+  emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+  %emph=[2]{word1,word2}, emphstyle=[2]{style},
+}
+
+% Inicio del documento
+
 \title{MAT237 C\'alculo Num\'erico}
 \author{Manuel Loaiza Vasquez}
 \date{Septiembre 2021}
@@ -66,7 +92,7 @@
 \end{statement}
 
 \begin{statement}{a}
-  $f(x) = cos(2 \pi x)$
+  $f(x) = \cos(2 \pi x)$
 \end{statement}
 
 \begin{solution}
@@ -147,10 +173,43 @@
   para $\varepsilon = 10^{-n}$ con $n = 4, 6, \dots, 12$.
 \end{statement}
 
+\begin{solution}
+  Utilicemos el siguiente script en MATLAB y el comando \texttt{fzero}
+
+  \lstinputlisting{scripts/ex_03.m}
+
+  para obtener la tabla de ra\'ices
+  \begin{center}
+    \texttt{Roots of the polynomial $x^2$ - (2 + eps) x + 1}\\
+    \texttt{eps = 1.000000e-04, root = 0.9900498750}\\
+    \texttt{eps = 1.000000e-06, root = 0.9990004999}\\
+    \texttt{eps = 1.000000e-08, root = 0.9999000050}\\
+    \texttt{eps = 1.000000e-10, root = 0.9999900001}\\
+    \texttt{eps = 1.000000e-12, root = 0.9999989999}
+  \end{center}
+\end{solution}
+
 \begin{statement}{b}
   ¿Qu\'e puede inferir de los resultados del inciso (a) sobre el n\'umero de
   condicionamiento de la ra\'iz?
 \end{statement}
+
+\begin{solution}
+  Consideremos el problema de hallar las ra\'ices de $at^2 + bt + c$ cuando
+  solo $b$ var\'ia y $a$ y $c$ son constantes. Derivamos impl\'icitamente con
+  respecto a $b$:
+  \begin{align*}
+    \frac{d}{db} (at^2 + bt + c) &= 0\\
+    2at\frac{dt}{db} + t + b \frac{dt}{db} &= 0\\
+    \frac{dt}{db}(2at + b) &= -t\\
+    \frac{dt}{db} &= \frac{-t}{2at + b}.
+  \end{align*}
+  Ahora calculamos
+  \[
+    \kappa_t(b) = \left|b \cdot \frac{dt / db}{t}\right| = \left|\frac{b}{\sqrt{b^2 - 4ac}}\right|
+    = \left|\frac{b}{a (t_1 - t_2)}\right|
+  \]
+\end{solution}
 
 \begin{statement}{4}
   Use el m\'etodo de bisecci\'on para encontrar dos n\'umeros reales $x$, con
@@ -169,15 +228,159 @@
 \end{statement}
 
 \begin{solution}
-  \begin{figure}[h!]
+  Primero, necesitamos definir una funci\'on objetivo $f: \BR \to \BR$ con
+  \[
+    f(x) = \det(A(x)) - 1000
+  \]
+  reduciendo as\'i nuestro problema a hallar las ra\'ices de esta.
+  Esbocemos $f$ en el intervalo $[-20, 20)$ para poder hacernos una idea de en
+  qu\'e intervalos la funci\'on es mon\'otona y tiene ra\'ices para poder aplicar
+  b\'usqueda binaria.
+
+  \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{graphics/plot.png}
-    \caption{Esbozo de la funci\'on objetivo}
+    \caption{Esbozo de $f$}
   \end{figure}
+
+  De la gr\'afica observamos que una ra\'iz se encuentra en el intervalo
+  $[-20, -15]$ y la otra en el intervalo $[9, 10]$.
+  \begin{itemize}
+    \item Aplicamos b\'usqueda binaria en el intervalo $[-20, -15]$, obteniendo la
+    ra\'iz aproximada $-17.188498$. Evaluamos $f(-17.188498) = -0.000853$,cuyo
+    valor absoluto al compararse con cero tiene tres decimales correctos.
+    \item Aplicamos b\'usqueda binaria en el intervalo $[9, 10]$, obteniendo la
+    ra\'iz aproximada $9.708299$. Evaluamos $f(9.708299) = -0.000230$,cuyo
+    valor absoluto al compararse con cero tiene tres decimales correctos.
+  \end{itemize}
 \end{solution}
 
-\begin{statement}{5}
+\lstinputlisting{scripts/ex_04.m}
 
+\begin{statement}{5}
+  Encuentre tres formas diferentes $g(x)$ para encontrar ra\'ices con seis
+  cifras de exactitud de $f(x) = 0$ por el m\'etodo de iteraci\'on de punto fijo.
+  Cada ecuaci\'on $f(x) = 0$ tiene tres ra\'ices. Encuentre m\'as $g(x)$ si fuese
+  necesario hasta que todas las ra\'ices sean encontradas por el m\'etodo.
+  Para cada iteraci\'on convergente, estime el valor de $|g'(r)|$ en base a
+  los errores $e_{k + 1} / e_k$ y comp\'arelo con el valor $|g'(r)|$, donde $r$
+  es la ra\'iz aproximada obtenida y $g'(x)$ es calculada anal\'iticamente.
 \end{statement}
 
+\begin{statement}{a}
+  $f(x) = 2x^3 - 6x - 1$
+\end{statement}
+
+\begin{solution}
+  Utilicemos el siguiente script en MATLAB para hallar las tres ra\'ices aproximadas
+  de $f$ utilizando el m\'etodo de iteraci\'on de punto fijo
+  \lstinputlisting{scripts/ex_05_01.m}
+  obteniendo como salida
+  
+  \begin{center}
+    \texttt{Roots of f(x) = 2$x^3$-6x-1}\\
+    \texttt{step: 1 x: 0.166667}\\
+    \texttt{step: 2 x: -0.165123}\\
+    \texttt{step: 3 x: -0.168167}\\
+    \texttt{step: 4 x: -0.168252}\\
+    \texttt{step: 5 x: -0.168254}\\
+    \texttt{First root: -0.168254}\\
+    \texttt{step: 1 x: 1.866256}\\
+    \texttt{step: 2 x: 1.827037}\\
+    \texttt{step: 3 x: 1.815212}\\
+    \texttt{step: 4 x: 1.811616}\\
+    \texttt{step: 5 x: 1.810519}\\
+    \texttt{step: 6 x: 1.810185}\\
+    \texttt{step: 7 x: 1.810083}\\
+    \texttt{step: 8 x: 1.810052}\\
+    \texttt{step: 9 x: 1.810042}\\
+    \texttt{step: 10 x: 1.810039}\\
+    \texttt{Second root: 1.810039}\\
+    \texttt{step: 1 x: -1.722222}\\
+    \texttt{step: 2 x: -1.647363}\\
+    \texttt{step: 3 x: -1.641813}\\
+    \texttt{step: 4 x: -1.641784}\\
+    \texttt{Third root: -1.641784}
+  \end{center}
+
+  Ahora analicemos anal\'iticamente cada una de las funciones $g$:
+  \begin{itemize}
+    \item $g(x) = (2x^3 - 1) / 6$. Tenemos $g'(x) = x^2$, por lo que
+    \[
+      |g'(-0.168254)| \approx 0.028309408516 < 1
+    \]
+    el MIPF converge localmente.
+    \item $g(x) = ((6x + 1) / 2)^{1 / 3}$. Tenemos $g'(x) = 1 / (3x + 1/2)^{2 / 3}$, por lo que
+    \[
+      |g'(1.810039)| \approx 0.305228 < 1  
+    \]
+    el MIPF converge localmente.
+    \item $g(x) = (4x^3 + 1) / (6x^2 - 6)$. Tenemos $g'(x) = (x (2x^3 - 6x - 1)) / (2(x^2 - 1)^2)$, por lo que
+    \[
+      |g'(-1.641784)| \approx 9.15176 \times 10^{-7}< 1
+    \]
+    el MIPF converge localmente.
+  \end{itemize}
+\end{solution}
+
+\begin{statement}{b}
+  $f(x) = e^{x - 2} + x^3 - x$
+\end{statement}
+
+\begin{solution}
+  Utilicemos el siguiente script en MATLAB para hallar las tres ra\'ices aproximadas
+  de $f$ utilizando el m\'etodo de iteraci\'on de punto fijo
+  \lstinputlisting{scripts/ex_05_02.m}
+  obteniendo como salida
+  \begin{center}
+    \texttt{Roots of f(x) = $e^(x - 2)$ + $x^3$ - x}\\
+    \texttt{step: 1 x: 0.162913}\\
+    \texttt{step: 2 x: 0.163605}\\
+    \texttt{step: 3 x: 0.163770}\\
+    \texttt{step: 4 x: 0.163810}\\
+    \texttt{step: 5 x: 0.163819}\\
+    \texttt{step: 6 x: 0.163822}\\
+    \texttt{First root: 0.163822}\\
+    \texttt{step: 1 x: 0.785558}\\
+    \texttt{step: 2 x: 0.787666}\\
+    \texttt{step: 3 x: 0.788462}\\
+    \texttt{step: 4 x: 0.788761}\\
+    \texttt{step: 5 x: 0.788874}\\
+    \texttt{step: 6 x: 0.788916}\\
+    \texttt{step: 7 x: 0.788932}\\
+    \texttt{step: 8 x: 0.788938}\\
+    \texttt{step: 9 x: 0.788940}\\
+    \texttt{Second root: 0.788940}\\
+    \texttt{step: 1 x: -1.053242}\\
+    \texttt{step: 2 x: -1.024060}\\
+    \texttt{step: 3 x: -1.023470}\\
+    \texttt{step: 4 x: -1.023482}\\
+    \texttt{Third root: -1.023482}
+  \end{center}
+
+  Ahora analicemos anal\'iticamente cada una de las funciones $g$:
+  \begin{itemize}
+    \item $g(x) = e^{x - 2} + x^3$. Tenemos $g'(x) = e^{x - 2} + 3x^2$, por lo que
+    \[
+      |g'(0.163822)| \approx 0.239939 < 1
+    \]
+    el MIPF converge localmente.
+    \item $g(x) = (x - e^{x - 2})^{1 / 3}$. Tenemos $g'(x) = (1 - e^{x - 2}) / (3(x - e^{x - 2})^{2 / 3})$, por lo que
+    \[
+      |g'(0.788940)| \approx 0.376011 < 1
+    \]
+    el MIPF converge localmente.
+    \item $g(x) = (-e^{x - 2} + 2x^3) / (3x^2 - 1)$. Tenemos
+    \[
+      g'(x) = \frac{6x^2 - e^{x - 2}}{3x^2 - 1} - \frac{6x(2x^3 - e^{x - 2})}{(3x^2 - 1)^2},
+    \]
+    por lo que
+    \[
+      |g'(-1.023482)| \approx 0.0226986 < 1
+    \]
+    el MIPF converge localmente.
+  \end{itemize}
+\end{solution}
+
 \end{document}
+
