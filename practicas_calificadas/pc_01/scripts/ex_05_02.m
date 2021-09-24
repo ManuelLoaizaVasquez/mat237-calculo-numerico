@@ -8,31 +8,15 @@ fprintf('Roots of f(x) = e^(x - 2) + x^3 - x\n');
 
 fprintf('\n');
 g = @(x) exp(x - 2) + x^3;
-root = fixed_point_iteration(g, 0.16, eps, max_steps);
+root = fixed_point_iteration(g, 0.16, eps, max_steps, 0.163822);
 fprintf('First root: %.6f\n', root);
 
 fprintf('\n');
 g = @(x) (x - exp(x - 2))^(1 / 3);
-root = fixed_point_iteration(g, 0.78, eps, max_steps);
+root = fixed_point_iteration(g, 0.78, eps, max_steps, 0.788940);
 fprintf('Second root: %.6f\n', root);
 
 fprintf('\n');
 g = @(x) (-exp(x - 2) + 2* x^3) / (3 * x^2 - 1);
-root = fixed_point_iteration(g, -1.2, eps, max_steps);
+root = fixed_point_iteration(g, -1.2, eps, max_steps, -1.023482);
 fprintf('Third root: %.6f\n', root);
-
-% Returns an approximate solution to f(x) = x with a tolerance of eps
-% and at most max_steps steps (to prevent infinite loop)
-% Usage: root = fixed_point_iteration(f, guess, eps, max_steps);
-
-function x = fixed_point_iteration(f, guess, eps, max_steps)
-    % First step
-    x = f(guess);
-    steps = 1;
-    fprintf('step: %d x: %.6f\n', steps, x);
-    while abs(x - f(x)) >= eps && steps < max_steps
-        x = f(x);
-        steps = steps + 1;
-        fprintf('step: %d x: %.6f\n', steps, x);
-    end
-end
