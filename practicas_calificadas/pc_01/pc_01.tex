@@ -178,18 +178,9 @@
 
 \begin{solution}
   Utilicemos el siguiente script en MATLAB y el comando \texttt{fzero}
-
   \lstinputlisting{scripts/ex_03.m}
-
   para obtener la tabla de ra\'ices
-  \begin{center}
-    \texttt{Roots of the polynomial $x^2$ - (2 + eps) x + 1}\\
-    \texttt{eps = 1.000000e-04, root = 0.9900498750}\\
-    \texttt{eps = 1.000000e-06, root = 0.9990004999}\\
-    \texttt{eps = 1.000000e-08, root = 0.9999000050}\\
-    \texttt{eps = 1.000000e-10, root = 0.9999900001}\\
-    \texttt{eps = 1.000000e-12, root = 0.9999989999}
-  \end{center}
+  \verbatiminput{outputs/ex_03.txt}
 \end{solution}
 
 \begin{statement}{b}
@@ -210,8 +201,21 @@
   Ahora calculamos
   \[
     \kappa_t(b) = \left|b \cdot \frac{dt / db}{t}\right| = \left|\frac{b}{\sqrt{b^2 - 4ac}}\right|
-    = \left|\frac{b}{a (t_1 - t_2)}\right|
+    = \left|\frac{b}{a (t_1 - t_2)}\right|.
   \]
+  Para nuestro caso particular, tenemos $a = 1$ y $b = 2$, por lo que tendremos
+  un gran n\'umero de condicionamiento si la diferencia entre las dos ra\'ices de
+  nuestra ecuaci\'on cuadr\'atica es mucho menor que $2$. Con el comando \texttt{fzero}
+  hemos encontrado una de las dos ra\'ices alrededor de $1$ y notamos que las dos ra\'ices
+  son muy cercanas (si en vez de usar el comando us\'abamos la f\'ormula general era evidente)
+  respecto a c\'omo hemos perturbado el coeficiente lineal, por lo que pasamos de tener
+  dos ra\'ices iguales a $1$, a dos ra\'ices que distan al menos $10^{-3}$ casi sim\'etricamente de $1$
+  cuando nuestra perturbaci\'on es de tan solo $10^{-4}$, pero cuando hemos hecho la
+  perturbaci\'on m\'as peque\~na, hemos estado m\'as cerca de $1$, lo cual es algo bueno
+  a pesar de que nuestras ra\'ices sean muy cercanas y un poco fuera de lo intuitivo
+  respecto al an\'alisis hecho, lo cual tiene sentido ya que el n\'umero de condicionamiento al final se
+  comporta como una cota y al estar diviendo entre n\'umeros muy peque\~nos se hace dif\'icil
+  de obtener buenos estimados.
 \end{solution}
 
 \begin{statement}{4}
@@ -256,9 +260,10 @@
     ra\'iz aproximada $9.708299$. Evaluamos $f(9.708299) = -0.000230$,cuyo
     valor absoluto al compararse con cero tiene tres decimales correctos.
   \end{itemize}
-\end{solution}
 
-\lstinputlisting{scripts/ex_04.m}
+  Lo descrito previamente fue conseguido v\'ia el siguiente script:
+  \lstinputlisting{scripts/ex_04.m}
+\end{solution}
 
 \begin{statement}{5}
   Encuentre tres formas diferentes $g(x)$ para encontrar ra\'ices con seis
@@ -269,6 +274,17 @@
   los errores $e_{k + 1} / e_k$ y comp\'arelo con el valor $|g'(r)|$, donde $r$
   es la ra\'iz aproximada obtenida y $g'(x)$ es calculada anal\'iticamente.
 \end{statement}
+
+\begin{solution}
+  Modifiquemos el algoritmo cl\'asico que ten\'iamos para poder mostrar el error
+  en cada iteraci\'on y el ratio entre los errores de dos iteraciones consecutivas.
+  Para esto, primero he resuelto el problema sin calcular los errores porque a\'un
+  no conoc\'ia el valor de $r$, el candidato a ra\'iz, para cada $g$ asociado a un $f$.
+  Una vez resuelto el problema, he a\~nadido el par\'ametro $r$ a la funci\'on para poder
+  generar la tabla con todo lo solicitado, d\'andole como input los valores de $r$
+  hallados previamente.
+  \lstinputlisting{scripts/fixed_point_iteration.m}
+\end{solution}
 
 \begin{statement}{a}
   $f(x) = 2x^3 - 6x - 1$
@@ -288,17 +304,17 @@
     \[
       |g'(-0.168254)| \approx 0.028309408516 < 1
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
     \item $g(x) = ((6x + 1) / 2)^{1 / 3}$. Tenemos $g'(x) = 1 / (3x + 1/2)^{2 / 3}$, por lo que
     \[
       |g'(1.810039)| \approx 0.305228 < 1  
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
     \item $g(x) = (4x^3 + 1) / (6x^2 - 6)$. Tenemos $g'(x) = (x (2x^3 - 6x - 1)) / (2(x^2 - 1)^2)$, por lo que
     \[
       |g'(-1.641784)| \approx 9.15176 \times 10^{-7}< 1
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
   \end{itemize}
 \end{solution}
 
@@ -320,12 +336,12 @@
     \[
       |g'(0.163822)| \approx 0.239939 < 1
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
     \item $g(x) = (x - e^{x - 2})^{1 / 3}$. Tenemos $g'(x) = (1 - e^{x - 2}) / (3(x - e^{x - 2})^{2 / 3})$, por lo que
     \[
       |g'(0.788940)| \approx 0.376011 < 1
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
     \item $g(x) = (-e^{x - 2} + 2x^3) / (3x^2 - 1)$. Tenemos
     \[
       g'(x) = \frac{6x^2 - e^{x - 2}}{3x^2 - 1} - \frac{6x(2x^3 - e^{x - 2})}{(3x^2 - 1)^2},
@@ -334,7 +350,7 @@
     \[
       |g'(-1.023482)| \approx 0.0226986 < 1
     \]
-    el MIPF converge localmente.
+    y el MIPF converge localmente.
   \end{itemize}
 \end{solution}
 
