@@ -8,6 +8,9 @@
 
 \usepackage{listings}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+
+\usepackage{verbatim}
+
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 % Descomentar fullpage cuando se quiera utilizar menos margen horizontal
@@ -276,32 +279,8 @@
   de $f$ utilizando el m\'etodo de iteraci\'on de punto fijo
   \lstinputlisting{scripts/ex_05_01.m}
   obteniendo como salida
-  
-  \begin{center}
-    \texttt{Roots of f(x) = 2$x^3$-6x-1}\\
-    \texttt{step: 1 x: 0.166667}\\
-    \texttt{step: 2 x: -0.165123}\\
-    \texttt{step: 3 x: -0.168167}\\
-    \texttt{step: 4 x: -0.168252}\\
-    \texttt{step: 5 x: -0.168254}\\
-    \texttt{First root: -0.168254}\\
-    \texttt{step: 1 x: 1.866256}\\
-    \texttt{step: 2 x: 1.827037}\\
-    \texttt{step: 3 x: 1.815212}\\
-    \texttt{step: 4 x: 1.811616}\\
-    \texttt{step: 5 x: 1.810519}\\
-    \texttt{step: 6 x: 1.810185}\\
-    \texttt{step: 7 x: 1.810083}\\
-    \texttt{step: 8 x: 1.810052}\\
-    \texttt{step: 9 x: 1.810042}\\
-    \texttt{step: 10 x: 1.810039}\\
-    \texttt{Second root: 1.810039}\\
-    \texttt{step: 1 x: -1.722222}\\
-    \texttt{step: 2 x: -1.647363}\\
-    \texttt{step: 3 x: -1.641813}\\
-    \texttt{step: 4 x: -1.641784}\\
-    \texttt{Third root: -1.641784}
-  \end{center}
+
+  \verbatiminput{outputs/ex_05_01.txt}
 
   Ahora analicemos anal\'iticamente cada una de las funciones $g$:
   \begin{itemize}
@@ -332,31 +311,8 @@
   de $f$ utilizando el m\'etodo de iteraci\'on de punto fijo
   \lstinputlisting{scripts/ex_05_02.m}
   obteniendo como salida
-  \begin{center}
-    \texttt{Roots of f(x) = $e^(x - 2)$ + $x^3$ - x}\\
-    \texttt{step: 1 x: 0.162913}\\
-    \texttt{step: 2 x: 0.163605}\\
-    \texttt{step: 3 x: 0.163770}\\
-    \texttt{step: 4 x: 0.163810}\\
-    \texttt{step: 5 x: 0.163819}\\
-    \texttt{step: 6 x: 0.163822}\\
-    \texttt{First root: 0.163822}\\
-    \texttt{step: 1 x: 0.785558}\\
-    \texttt{step: 2 x: 0.787666}\\
-    \texttt{step: 3 x: 0.788462}\\
-    \texttt{step: 4 x: 0.788761}\\
-    \texttt{step: 5 x: 0.788874}\\
-    \texttt{step: 6 x: 0.788916}\\
-    \texttt{step: 7 x: 0.788932}\\
-    \texttt{step: 8 x: 0.788938}\\
-    \texttt{step: 9 x: 0.788940}\\
-    \texttt{Second root: 0.788940}\\
-    \texttt{step: 1 x: -1.053242}\\
-    \texttt{step: 2 x: -1.024060}\\
-    \texttt{step: 3 x: -1.023470}\\
-    \texttt{step: 4 x: -1.023482}\\
-    \texttt{Third root: -1.023482}
-  \end{center}
+
+  \verbatiminput{outputs/ex_05_02.txt}
 
   Ahora analicemos anal\'iticamente cada una de las funciones $g$:
   \begin{itemize}
