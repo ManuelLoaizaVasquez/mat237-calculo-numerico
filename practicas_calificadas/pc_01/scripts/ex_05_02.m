@@ -17,6 +17,6 @@ root = fixed_point_iteration(g, 0.78, eps, max_steps, 0.788940);
 fprintf('Second root: %.6f\n', root);
 
 fprintf('\n');
-g = @(x) (-exp(x - 2) + 2* x^3) / (3 * x^2 - 1);
+g = @(x) (-exp(x - 2) + 2 * x^3) / (3 * x^2 - 1);
 root = fixed_point_iteration(g, -1.2, eps, max_steps, -1.023482);
 fprintf('Third root: %.6f\n', root);
