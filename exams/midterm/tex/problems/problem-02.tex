@@ -5,3 +5,14 @@
   use the built-in \texttt{polyfit} command.
   Test your function on the first problem from this section.
 \end{statement}
+
+\begin{solution}
+  The following function performs inverse quadratic interpolation
+  \lstinputlisting{scripts/algorithms/iqi.m}
+  Examples 4.4.1 and 4.4.2 analyze the function $f(x) = x e^x - 2$
+  and Example 4.4.3 the function $f(x) = x + \cos(10x)$ with real domain.
+  We are going to test our function with these examples
+  \lstinputlisting{scripts/problems/problem-02.m}
+  obtaining the following roots:
+  \verbatiminput{outputs/output-02.txt}
+\end{solution}
