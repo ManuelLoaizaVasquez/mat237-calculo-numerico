@@ -1,0 +1,2 @@
+Example 4.4.1 root : 0.8526055020
+Example 4.4.3 root : 0.9678884018
