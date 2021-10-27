@@ -1,5 +1,6 @@
-function p = polyinterp(t, y)
-  % Polynomial interpolation by the barycentric formula.
+function p = polychebinterp(t, y)
+  % Polynomial interpolation by the barycentric formula
+  % using Chebyshev points of the second kind.
   % Input:
   %   t: interpolation nodes (vector, length n + 1)
   %   y: interpolation values (vector, length n + 1)
@@ -11,14 +12,18 @@ function p = polyinterp(t, y)
   C = (t(end) - t(1)) / 4;  % scaling factor to ensure stability
   tc = t / C;
   
-  % Adding one node at a time, compute inverses of the weights.
-  omega = ones(n + 1, 1);
-  for m = 1 : n
-    d = (tc(1 : m) - tc(m + 1));  % vector of node differences
-    omega(1 : m) = omega(1 : m).*d;  % update previous 
-    omega(m + 1) = prod(-d);  % compute the new one
+  % Barycentric weights using Chebyshev nodes
+  w = ones(n + 1, 1);
+  factor = -1;
+  for k = 1 : n + 1
+    if k == 1 || k == n + 1
+      d = 1 / 2;
+    else
+      d = 1;
+    end
+    w(k) = factor * d;
+    factor = factor * (-1);
   end
-  w = 1./omega;  % go from inverses to weights
   
   p = @evaluate;
   
