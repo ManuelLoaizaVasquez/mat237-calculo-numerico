@@ -15,6 +15,28 @@
   $f(x) = 1 / (25 x^2 + 1)$.
 \end{statement}
 
+\begin{solution}
+  Computing the infinity-norm error of $4001$ evenly spaced points between $-1$ and $1$
+  of each polynomial interpolant, a good approximation for $k$ is $1.85$ using $c = 1$.
+  \lstinputlisting{scripts/problems/problem-05-01.m}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{graphics/plot-05-01.png}
+    \caption{Infinity norm error of $f(x) = 1 / (25 x^2 + 1)$ and a bounding function}
+  \end{figure}
+\end{solution}
+
 \begin{statement}{c}
   $f(x) = \cosh(\sin x)$.
 \end{statement}
+
+\begin{solution}
+  Computing the infinity-norm error of $4001$ evenly spaced points between $-1$ and $1$
+  of each polynomial interpolant, a good approximation for $k$ is $1.75$ using $c = 1$.
+  \lstinputlisting{scripts/problems/problem-05-03.m}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{graphics/plot-05-03.png}
+    \caption{Infinite norm error of $f(x) = \cosh(\sin(x))$ and a bounding function}
+  \end{figure}
+\end{solution}
