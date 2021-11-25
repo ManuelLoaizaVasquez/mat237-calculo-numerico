@@ -1,11 +1,41 @@
 \begin{statement}{1}
-  Determine si $f$ es un spline c\'ubico con nudos $-1$, $0$, $1$ y $2$.
+  Determine si $S$ es un spline c\'ubico con nodos $-1$, $0$, $1$ y $2$.
   \[
-    f(x) = 
+    S(x) = 
     \begin{cases}
-      1 + 2(x + 1) + (x + 1)^3 & -1 \leq x < 0, \\
-      3 + 5x + 3x^2 & 0 \leq x < 1, \\
+      1 + 2(x + 1) + (x + 1)^3 & -1 \leq x \leq 0, \\
+      3 + 5x + 3x^2 & 0 \leq x \leq 1, \\
       11 + (x - 1) + 3 (x - 1)^2 + (x - 1)^3 & 1 \leq x \leq 2.
     \end{cases}
   \]
 \end{statement}
+
+\begin{solution}
+  Tenemos la funci\'on $S$ en $[-1, 2]$ con nodos
+  $x_0 = -1 < x_1 = 0 < x_2 = 1 < x_3 = 2$.
+  Por definici\'on, $S$ es un spline c\'ubico si satisface lo siguiente:
+  \begin{itemize}
+    \item $S_i$ es un polinomio c\'ubico en $[x_i, x_{i + 1}]$ para $i = 0, \dots, 2$.
+    Esto es trivial pues cada tramo es un polinomio de grado menor o igual a tres.
+    \item $S$ es de clase $C^2$. Como cada tramo $S_i$ es un polinomio, entonces
+    es continuo en infinitamente diferenciable en su interior.
+    Nos faltar\'ia analizar que se cumple
+    $S_{i + 1}(x_{i + 1}) = S_i(x_{i + 1})$,
+    $S'_{i + 1}(x_{i + 1}) = S'_i(x_{i + 1})$ y
+    $S''_{i + 1}(x_{i + 1}) = S''_i(x_{i + 1})$.
+    Tenemos
+    \begin{align*}
+      S_0(x) &= 1 + 2(x + 1) + (x + 1)^3,\\
+      S_1(x) &= 3 + 5x + 3x^2,\\
+      S_2(x) &= 11 + (x - 1) + 3(x - 1)^2,\\
+      S'_0(x) &= 2 + 3(x + 1)^2,\\
+      S'_1(x) &= 5 + 6x,\\
+      S'_2(x) &= 1 + 6(x - 1),\\
+      S''_0(x) &= 6(x + 1),\\
+      S''_1(x) &= 6,\\
+      S''_2(x) &= 6.
+    \end{align*}
+    Sin embargo, $S_0(0) = 4 \neq 3 = S_1(0)$.
+  \end{itemize}
+  Finalmente, podemos concluir que $S$ no es un spline c\'ubico.
+\end{solution}
