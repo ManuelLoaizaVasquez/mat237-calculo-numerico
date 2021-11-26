@@ -1,0 +1,30 @@
+\begin{statement}{5}
+  Construya una regla de la forma
+  \[
+    \int_{-1}^1 f(x) \, dx \approx a_1 f(-1/2) + a_2 f(0) + a_3 f(1/2)
+  \]
+  que sea exacta para todos los polinomios de grado menor o igual a dos.
+\end{statement}
+
+\begin{solution}
+  Aprovechemos
+  \begin{align*}
+    \int_{-1}^1 x^k =
+    \begin{cases}
+      0 & k \text{ impar},\\
+      2 / (k + 1) & k \text{ par}
+    \end{cases}
+  \end{align*}
+  para realizar las cuentas de una manera m\'as r\'apida, puesto que basta con
+  evaluar la expresi\'on en $1$, $x$ y $x^2$. Resolvamos el sistema de ecuaciones
+  \begin{align*}
+    2 &= a_0 + a_1 + a_2\\
+    0 &= -\frac{a_0}{2} + \frac{a_2}{2}\\
+    \frac{2}{3} &= \frac{a_0}{4} + \frac{a_2}{4}.
+  \end{align*}
+  De la segunda ecuaci\'on tenemos que $a_0 = a_2$ y
+  reemplazando esto en la tercera ecuaci\'on obtenemos $a_0 = a_2 = 4 / 3$.
+  Utilizando esto en la primera ecuaci\'on conseguimos $a_1 = -2/3$.
+  Del teorema del curso, la regla es exacta para todos los polinomios de grado
+  menor o igual a cinco, en particular, para los de grado menor o igual a dos.
+\end{solution}
