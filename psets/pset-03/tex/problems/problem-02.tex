@@ -53,7 +53,12 @@
   \[
       \int_0^{0.8} e^{-x} \, dx = -e^{-x} \Big|_0^{0.8} = 1 - e^{-0.8} \approx 0.550671.
   \]
-
+  El error absoluto, con seis d\'igitos,
+  usando la regla trapezoidal es $E_T(f; h) = 0.001834$
+  mientras que usando la regla de Simpson es $E_S(f, h) = 0$.
+  Debido a que hemos obtenido un menor error absoluto,
+  podemos decir que el m\'etodo de Simpson
+  fue mejor para esta integral num\'erica.
 \end{solution}
 
 \begin{statement}{d}
@@ -72,3 +77,40 @@
   Si deseamos que el valor absoluto del error sea menor que $10^{-4}$,
   ¿cu\'antos puntos se necesitar\'an para cada m\'etodo?
 \end{statement}
+
+\begin{solution}
+  Como la funci\'on $e^{-x}$ es decreciente en todo su dominio, el m\'aximo
+  valor que puede tomar en $[0, 0.8]$ es $1$.
+
+  Determinemos la m\'inima cantidad de puntos necesarios para que el error absoluto
+  tras usar la regla trapezoidal sea menor que $10^{-4}$.
+  Tenemos $f''(x) = e^{-x}$. Luego
+  \[
+    |E_T(f; h)| \leq \frac{0.8 - 0}{12} \cdot 1 \cdot h^2 < 10^{-4}.
+  \]
+  Manipulemos esta expresi\'on
+  \begin{align*}
+    h^2 &< \frac{12}{0.8} \cdot 10^4 \\
+    &= 0.0015 \\
+    h &< 0.0387298 \\
+    \frac{0.8 - 0}{n} &< 0.0387298 \\
+    n &> 20.6559.
+  \end{align*}
+  Escogemos $n = 21$ y por lo tanto $n + 1 = 22$ puntos.
+
+  Ahora determinemos la m\'inima cantidad de puntos necesarios para que el error absoluto
+  tras utilizar la regla de Simpson sea menor que $10^{-4}$.
+  Tenemos $f^{(4)}(x) = e^{-x}$. Luego
+  \[
+    |E_S(f; h)| \leq \frac{0.8 - 0}{180} \cdot 1 \cdot h^4 < 10^{-4}.
+  \]
+  Manipulemos esta expresi\'on
+  \begin{align*}
+    h^4 &< \frac{180}{0.8 \cdot 10^4} \\
+    h &< 0.3872983 \\
+    \frac{0.8 - 0}{2n} &< 0.3872983 \\
+    n &> 1.03280.
+  \end{align*}
+  Escogemos $n = 2$ y por lo tanto $2n + 1 = 5$ puntos.
+\end{solution}
+
