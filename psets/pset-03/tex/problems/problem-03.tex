@@ -1,0 +1,75 @@
+\begin{statement}{3}
+  Algoritmo de Romberg.
+\end{statement}
+
+\begin{statement}{a}
+  Escriba una funci\'on en MATLAB que integre v\'ia el algoritmo de Romberg.
+  Uno deber\'ia invocar la funci\'on como \texttt{R = romberg(f, a, b, n)},
+  donde
+  \texttt{f} es la funci\'on,
+  \texttt{a} y \texttt{b} los extremos del intervalo
+  y \texttt{n} el tama\~no de la tabla de Romberg.
+  La funci\'on debe retornar como salida la tabla de Romberg completa.
+  La mejor aproximaci\'on de la integral ser\'ia el valor en \texttt{R(n, n)}.
+\end{statement}
+
+\begin{solution}
+  La siguiente funci\'on implementa el algoritmo de Romberg, donde
+  $f$ es la funci\'on a integrar,
+  $a$ y $b$ los extremos del intervalo de integraci\'on
+  utilizando $2^n + 1$ puntos.
+  \lstinputlisting{scripts/algorithms/romberg-algorithm.m}
+\end{solution}
+
+\begin{statement}{b}
+  Use la funci\'on \texttt{romberg} para calcular las integrales
+  \[
+    \int_0^{\pi} \sin(x) \, dx \text{ y } \int_0^1 \sqrt{x} \, dx.
+  \]
+  Calcule tambi\'en los errores.
+  Los valores exactos de las integrales son $2$ y $2 / 3$, respectivamente.
+  Exhiba los errores a lo largo de la diagonal de la tabla
+  y observe c\'omo cambia a lo largo de la diagonal.
+\end{statement}
+
+\begin{solution}
+  Primero creamos la siguiente funci\'on para que imprima ambas tablas solicitadas
+  \lstinputlisting{scripts/utils/print-tables.m}
+  La funci\'on anterior llama a otras dos funciones.
+  Una se encarga de imprimir los valores de la tabla de Romberg
+  \lstinputlisting{scripts/utils/print-romberg.m}
+  y la otra los errores absolutos de la tabla de Romberg con el valor exacto de la integral
+  \lstinputlisting{scripts/utils/print-romberg-errors.m}
+  Calculamos la primera integral
+  \lstinputlisting{scripts/problems/problem-03-01.m}
+  \verbatiminput{outputs/problem-03-01.txt}
+  y la segunda
+  \lstinputlisting{scripts/problems/problem-03-02.m}
+  \verbatiminput{outputs/problem-03-02.txt}
+  obteniendo como integrales num\'ericas $2$ y $0.665593$, respectivamente.
+\end{solution}
+
+\begin{statement}{c}
+  Explique por qu\'e el algoritmo de Romberg
+  nos da pobres resultados para la \'ultima integral.
+  Use la funci\'on \texttt{integral} de MATLAB para calcular las integrales
+  del \'item (b) usando $10^{-9}$ como tolerancia para ambas integraciones.
+\end{statement}
+
+\begin{solution}
+  Localmente, he llamado a la funci\'on que calcula la segunda integral
+  para valores de $n$ m\'as grandes, por ejemplo, $n = 12$, y usando seis
+  d\'igitos de exactitud e igual seguimos teniendo un error absoluto distinto de cero
+  \verbatiminput{outputs/output-03-03.txt}
+  El algoritmo de Romberg nos da pobres resultados para esta \'ultima integral
+  y necesitamos una cantidad bastante grande de puntos para mejorar el resultado
+  puesto que la funci\'on $\sqrt{x}$ no tiene expansi\'on de Taylor alrededor de cero
+  y debido a la extrapolaci\'on de Richardson, el error depender\'ia pr\'acticamente
+  de su expansi\'on.
+
+  Finalmente, usando el comando \texttt{integral} conseguimos
+  \lstinputlisting{scripts/problems/problem-03-04.m}
+  con integral num\'erica $2.000000000$ en la primera
+  \lstinputlisting{scripts/problems/problem-03-05.m}
+  y $0.666666667$ en la segunda.
+\end{solution}
